@@ -1,9 +1,82 @@
 {
-    "type": "module",
-    "private": true,
-    "sideEffects": false,
-    "engines": {
-      "pnpm": ">=8.0.0",
-      "node": ">=18.0.0"
+  "type": "module",
+  "private": true,
+  "sideEffects": false,
+  "engines": {
+    "pnpm": ">=8.0.0",
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "vistazaim:start": "alias=vistazaim vite",
+    "vistazaim:build": "alias=vistazaim vite build",
+    "preview": "vite preview",
+    "eslint": "eslint src/js",
+    "eslint:fix": "pnpm run eslint --fix",
+    "stylelint": "stylelint src/styles",
+    "stylelint:fix": "pnpm run stylelint --fix",
+    "format": "pnpm run eslint:fix && pnpm run stylelint:fix"
+  },
+  "browserslist": [
+    "defaults",
+    ">0.3%",
+    "iOS >= 12",
+    "not dead",
+    "not OperaMini all"
+  ],
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "cash-dom": "^8.1.5",
+    "imask": "^3.2.4",
+    "ll-cs": "1.26.1",
+    "normalize.css": "^8.0.1",
+    "swiper": "^10.0.4",
+    "vue": "2.7.14"
+  },
+  "devDependencies": {
+    "@proleads/eslint-config-ts": "^4.0.0",
+    "@proleads/workflow": "2.0.0-rc.0",
+    "lint-staged": "^13.3.0",
+    "rollup-plugin-visualizer": "^5.9.2",
+    "sass": "^1.66.1",
+    "simple-git-hooks": "^2.9.0",
+    "stylelint": "^15.10.3",
+    "stylelint-config-clean-order": "^5.0.1",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-standard-scss": "^10.0.0",
+    "stylelint-prettier": "^4.0.2"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.js": "eslint",
+    "*.scss": "stylelint"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@proleads/eslint-config-ts"
+    ],
+    "ignorePatterns": [
+      "src/js/vendor"
+    ],
+    "settings": {
+      "polyfills": [
+        "Promise.allSettled"
+      ]
     }
+  },
+  "prettier": {
+    "editorconfig": true,
+    "printWidth": 140
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard-scss",
+      "stylelint-config-prettier-scss",
+      "stylelint-config-clean-order"
+    ],
+    "plugins": [
+      "stylelint-prettier"
+    ]
+  }
 }
