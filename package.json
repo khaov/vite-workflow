@@ -7,8 +7,8 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "vistazaim:start": "alias=vistazaim vite",
-    "vistazaim:build": "alias=vistazaim vite build",
+    "vite-workflow:start": "alias=vite-workflow vite",
+    "vite-workflow:build": "alias=vite-workflow vite build",
     "preview": "vite preview",
     "eslint": "eslint src/js",
     "eslint:fix": "pnpm run eslint --fix",
@@ -25,16 +25,19 @@
   ],
   "dependencies": {
     "animate.css": "^4.1.1",
+    "autoprefixer": "^10.4.15",
     "cash-dom": "^8.1.5",
     "imask": "^3.2.4",
     "ll-cs": "1.26.1",
     "normalize.css": "^8.0.1",
+    "postcss-inline-svg": "^6.0.0",
     "swiper": "^10.0.4",
+    "vite": "^4.4.9",
     "vue": "2.7.14"
   },
   "devDependencies": {
     "@proleads/eslint-config-ts": "^4.0.0",
-    "@proleads/workflow": "2.0.0-rc.0",
+    "@proleads/workflow": "2.0.0-rc.2",
     "lint-staged": "^13.3.0",
     "rollup-plugin-visualizer": "^5.9.2",
     "sass": "^1.66.1",

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ locale.current }}">
+    <head>
+      <base href="/">
+      <meta charset="UTF-8">
+    </head>
+    <body class="body">
+        <div class="body__wrapper">
+            <div class="body__header">
+                {% block header %}
+                    {% include "layout/header/default.njk" %}
+                {% endblock %}
+            </div>
+            <main class="body__content">
+                {% block content %}{% endblock %}
+            </main>
+            <div class="body__footer">
+                {% block footer %}
+                    {% include "layout/footer/default.njk" %}
+                {% endblock %}
+            </div>
+        </div>
+
+    </body>
+</html>
